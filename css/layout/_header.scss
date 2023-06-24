@@ -1,0 +1,17 @@
+header {
+  text-align: center;
+  margin: 50px 0;
+  padding: 0 20px;
+  h1,
+  h2 {
+     font-size: $bigFont;
+ }
+  h2 {
+    font-weight: 300;
+  }
+  p {
+    max-width: 500px;
+    margin: 1rem auto 0;
+    line-height: $mainLineHeight;
+  }
+}

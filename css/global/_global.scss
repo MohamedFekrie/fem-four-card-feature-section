@@ -1,0 +1,22 @@
+html {
+  font-size: $bodyFont;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: $veryLightGray;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+h1,
+h3 {
+  color: $veryDarkBlue;
+}
+p {
+  color: $grayishBlue;
+  line-height: $mainLineHeight;
+}

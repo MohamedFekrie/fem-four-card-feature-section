@@ -1,0 +1,74 @@
+
+.boxes-contanier {
+  padding: 0 20px;
+  margin-top: 80px;
+  @include breakpoints-up(md) { // 992px ==> &
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 20px;
+  }
+    .box {
+    position: relative;
+    padding: 30px;
+    background-color: $white;
+    box-shadow: rgba(36, 36, 95, .2) 0px 7px 29px 0px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+   @include breakpoints-down(md) { // 0 ==> 575.98px
+      width: 450px;
+   }
+    &__header {
+      font-size: $midiumFont;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: $smallFont;
+   }
+    &__image {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 30px;
+      img {
+         @include breakpoints-down(sm) { // 0 ==> 767.98px
+            width: 50px;
+         }
+      }
+   }
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+    }
+    &:first-child::before {
+      @include borderTopColor($cyan);
+    }
+    &:last-child::before {
+      @include borderTopColor($blue);
+    }
+  }
+  .middle-boxes {
+     @include breakPoint-between(md, lg) { // 777px ==> 991.98px
+        display: flex;
+        grid-gap: 20px;
+     }
+     .box {
+     @include breakpoints-down(md) {  // 0 ==> 991.98px
+      margin: 20px auto;
+     }
+     &:first-child {
+        margin-bottom: 20px;
+        &::before {
+           @include borderTopColor($red);
+        }
+     }
+    &:last-child::before {
+      @include borderTopColor($orange);
+    }
+   }
+  }
+}

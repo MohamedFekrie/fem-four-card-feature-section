@@ -1,0 +1,34 @@
+$breackpoints: (
+   "xsm": 575.98px,
+   "sm": 767.98px,
+   "md": 991.98px,
+   "lg": 1199.98px,
+   "xlg": 1399.98px
+);
+$breakPoint-between: (
+   "sm-md": "(min-width: 576px) and (max-width: 767.98px)",
+   "md-lg": "(min-width: 777px) and (max-width: 991.98px)",
+   "lg-xlg": "(min-width: 992px) and (max-width: 1199.98px)",
+   "xlg-xxlg": "(min-width: 1200px) and (max-width: 1399.98px)"
+);
+
+@mixin breakpoints-up($size) {
+  @media(min-width: map-get($breackpoints, $size) + .02) {
+    @content;
+  }
+}
+@mixin breakpoints-down($size) {
+  @media(max-width: map-get($breackpoints, $size)) {
+    @content;
+  }
+}
+@mixin breakPoint-between($start, $end) {
+   @media #{map-get($breakPoint-between, #{$start}-#{$end})} {
+      @content;
+   }
+}
+
+/// Boxes Border Color
+@mixin borderTopColor($color) {
+  background-color: $color;
+}
